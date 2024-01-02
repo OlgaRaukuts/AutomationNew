@@ -11,9 +11,8 @@ repositories {
 
 dependencies {
     implementation 'org.testng:testng:7.7.0'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.8.1'
-    testImplementation 'com.codeborne:selenide:6.12.3'
-
+    implementation 'org.seleniumhq.selenium:selenium-java:4.5.0'
+    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.16.1'
 }
 
 test {
