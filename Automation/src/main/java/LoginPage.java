@@ -1,5 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 public class LoginPage {
     public WebDriver driver;
 
@@ -31,6 +33,10 @@ public class LoginPage {
 
     public String getErrorMessage(){
         return driver.findElement(errorMessage).getText();
+    }
+
+    public boolean getLogInButton(){
+        return driver.findElement(loginButton).isDisplayed();
     }
 
 }
