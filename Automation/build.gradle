@@ -21,14 +21,14 @@ test {
 test { //this is the gradle task to be executed
     useTestNG() { //Tells Gradle to use TestNG
         useDefaultListeners = true // Tells TestNG to execute its default reporting structure
-        suites 'src/??.xml' //location of our suite.xml
+        suites 'Automation/src/test/java/tests.xml' //location of our suite.xml
     }
 }
 task smokeTests(type: Test) { // we define a task with name ‘smokeTests’
     useTestNG() {
         useDefaultListeners = true
-        suites 'src/???.xml'
-        includeGroups 'smoke' // We define the group name by using ‘includeGroups’ parameter.
+        suites 'Automation/src/test/java/tests.xml'
+        //includeGroups 'smoke' // We define the group name by using ‘includeGroups’ parameter.
     }
 
 

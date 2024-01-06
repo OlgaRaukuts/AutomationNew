@@ -8,9 +8,13 @@ public class ProductPage {
     }
 
     By itemDetailsName = By.xpath("/html/body/div/div/div/div[2]/div/div/div[2]/div[1]");
+    By backToProducts = By.xpath("//*[@id=\"back-to-products\"]");
 
     public String getItemDetails(){
         return driver.findElement(itemDetailsName).getText();
+    }
+    public void clickBackToProducts(){
+        driver.findElement(backToProducts).click();
     }
 
 }

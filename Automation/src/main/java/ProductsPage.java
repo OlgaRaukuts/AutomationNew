@@ -9,6 +9,8 @@ public class ProductsPage {
     }
     By addToCardButton = By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]");
     By getAddToCardButton2 = By.xpath("//*[@id=\"add-to-cart-test.allthethings()-t-shirt-(red)\"]");
+
+    By addToCardItem3 = By.xpath("//*[@id=\"add-to-cart-sauce-labs-bolt-t-shirt\"]");
     By cartBadge = By.xpath("/html/body/div/div/div/div[1]/div[1]/div[3]/a/span");
     By removeButton = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]");
     By pageLogo = By.xpath("/html/body/div/div/div/div[1]/div[1]/div[2]/div");
@@ -53,4 +55,8 @@ public class ProductsPage {
     public void clickCartIcon(){
         driver.findElement(cartIcon).click();
     }
+    public void addToCard3(){
+        driver.findElement(addToCardItem3).click();
+    }
+
 }

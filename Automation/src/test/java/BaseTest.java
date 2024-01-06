@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
@@ -16,6 +17,7 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.get(ConfProperties.getProperty("loginpage"));
     }
+
     @AfterClass
     public void close() {
         driver.close();

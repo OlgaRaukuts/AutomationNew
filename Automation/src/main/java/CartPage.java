@@ -21,6 +21,8 @@ public class CartPage {
     By removeButtonCartPage = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]");
     By cartItem = By.xpath("/html/body/div/div/div/div[2]/div/div[1]/div[3]/div[2]");
     By errorFN = By.xpath("/html/body/div/div/div/div[2]/div/form/div[1]/div[4]/h3");
+    By continueShopping = By.xpath("//*[@id=\"continue-shopping\"]");
+    By cancelButton = By.xpath("//*[@id=\"cancel\"]");
 
     public void clickCheckoutButton(){
         driver.findElement(checkoutButton).click();
@@ -62,5 +64,11 @@ public class CartPage {
     }
     public String getErrorFN(){
         return driver.findElement(errorFN).getText();
+    }
+    public void clickContinueShopping(){
+        driver.findElement(continueShopping).click();
+    }
+    public void clickCancelButton(){
+        driver.findElement(cancelButton).click();
     }
 }
