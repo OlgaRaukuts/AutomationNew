@@ -16,8 +16,7 @@ public class LoginTests extends BaseTest{
         loginPage.login("standard_user", "secret_sauce");
         loginPage.clickLoginButton();
         Assert.assertTrue(productsPage.getLogo().contains("Swag Labs"));
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
+        productsPage.logoutGeneral();
     }
     @Test(description = "enter wrong credentials")
     public void logInPageWrong(){

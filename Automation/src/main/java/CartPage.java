@@ -71,4 +71,10 @@ public class CartPage {
     public void clickCancelButton(){
         driver.findElement(cancelButton).click();
     }
+    public void fillTheForm(String strFirstName, String strLastName, String strZipCode){
+        this.setFirstName(strFirstName);
+        this.setLastName(strLastName);
+        this.setZipCode(strZipCode);
+    }
+
 }

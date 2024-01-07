@@ -18,8 +18,7 @@ public class ProductsPageTest extends BaseTest{
     public void addProduct(){
         productsPage.addToCard();
         Assert.assertTrue(productsPage.getRemoveButton().contains("Remove"));
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
+        productsPage.logoutGeneral();
 
     }
     @Test(description = "open a product page")
@@ -27,9 +26,7 @@ public class ProductsPageTest extends BaseTest{
         productsPage.clickInventoryItemLink();
         Assert.assertTrue(productPage.getItemDetails().contains("Sauce Labs Backpack"));
         productPage.clickBackToProducts();
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
-
+        productsPage.logoutGeneral();
     }
     @Test(description = "log out the products page")
     public void logOutProductPage(){
@@ -43,15 +40,13 @@ public class ProductsPageTest extends BaseTest{
     public void filterProducts(){
         productsPage.clickFilter();
         Assert.assertTrue(productsPage.getFilter().contains("Name (Z to A)"));
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
+        productsPage.logoutGeneral();
     }
    @Test(description = "add two items to the cart")
     public void addSeveralProducts(){
        productsPage.addToCard3();
        productsPage.addToCard2();
        Assert.assertTrue(productsPage.getRemoveButton().contains("Remove"));
-       productsPage.clickSideBarMenu();
-       productsPage.logOut();
+       productsPage.logoutGeneral();
     }
 }

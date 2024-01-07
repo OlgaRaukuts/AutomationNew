@@ -19,38 +19,30 @@ public class CartPageTests extends BaseTest{
     }
     @Test(description = "add a product to the cart and finish the buying")
     public void orderProduct(){
-        //Assert.assertTrue(productsPage.getLogo().contains("Swag Labs"));
         cartPage.clickCheckoutButton();
         Assert.assertTrue(cartPage.getCheckoutInfoForm());
-        cartPage.setFirstName("olga");
-        cartPage.setLastName("ra");
-        cartPage.setZipCode("2033");
+        cartPage.fillTheForm("olga","ra","s233");
         cartPage.clickContinueButton();
         Assert.assertTrue(cartPage.getCheckoutOverview());
         cartPage.clickFinishButton();
         Assert.assertTrue(cartPage.getFinishedOrder());
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
+        productsPage.logoutGeneral();
     }
    @Test(description = "remove a product from the cart")
     public void removeProduct(){
         cartPage.removeProduct();
        // Assert.assertTrue(cartPage.getCartItem()); подумать над ассертом
         cartPage.clickContinueShopping();
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
+        productsPage.logoutGeneral();
     }
      @Test(description = "checkout without products")
     public void checkoutEmptyCart(){
         cartPage.clickCheckoutButton();
-        cartPage.setFirstName("olga");
-        cartPage.setLastName("ra");
-        cartPage.setZipCode("2033");
+        cartPage.fillTheForm("olga","ra","s233");
         cartPage.clickContinueButton();
         cartPage.clickFinishButton();
         Assert.assertTrue(cartPage.getFinishedOrder());
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
+        productsPage.logoutGeneral();
 
     }
 /*   @Test(description = "checkout without filling checkout form")

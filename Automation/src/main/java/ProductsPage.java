@@ -59,4 +59,9 @@ public class ProductsPage {
         driver.findElement(addToCardItem3).click();
     }
 
+    public void logoutGeneral(){
+        clickSideBarMenu();
+        logOut();
+    }
+
 }
