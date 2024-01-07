@@ -16,12 +16,8 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
-}
-test { //this is the gradle task to be executed
-    useTestNG() { //Tells Gradle to use TestNG
-        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
-        suites 'tests.xml' //location of our suite.xml
+    useTestNG() {
+        useDefaultListeners = true
     }
     testLogging {
         events "PASSED", "FAILED", "SKIPPED"
