@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class ProductsPage {
-    public WebDriver driver;
+    private WebDriver driver;
     public ProductsPage (WebDriver driver){
         this.driver = driver;
     }
