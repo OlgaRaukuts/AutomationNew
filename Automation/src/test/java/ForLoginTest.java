@@ -19,11 +19,8 @@ public class ForLoginTest {
     }
     @BeforeMethod
     public static void setupPreconditions(){
+        loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
-    }
-    @AfterMethod
-    public void logOut(){
-        productsPage.logoutGeneral();
     }
     @AfterClass
     public void close() {

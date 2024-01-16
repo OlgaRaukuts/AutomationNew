@@ -13,14 +13,14 @@ public class CartPage {
     By lastName = By.xpath("//*[@id=\"last-name\"]");
     By zipCode = By.xpath("//*[@id=\"postal-code\"]");
     By continueButton = By.xpath("//*[@id=\"continue\"]");
-    By checkoutOverview = By.xpath("/html/body/div/div/div/div[1]/div[2]/span");
+    By checkoutOverview = By.xpath("//span[@class='title']");
     By finishButton = By.xpath("//*[@id=\"finish\"]");
-    By finishedOrder = By.xpath("/html/body/div/div/div/div[2]/h2");
+    By finishedOrder = By.xpath("//span[@class='title']");
     By backHomeButton = By.xpath("//*[@id=\"back-to-products\"]");
-    By checkoutInfo = By.xpath("/html/body/div/div/div/div[2]/div/form/div[1]");
+    By checkoutInfo = By.xpath("//div[@class='checkout_info']");
     By removeButtonCartPage = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]");
-    By cartItem = By.xpath("/html/body/div/div/div/div[2]/div/div[1]/div[3]/div[2]");
-    By errorFN = By.xpath("/html/body/div/div/div/div[2]/div/form/div[1]/div[4]/h3");
+    By cartItem = By.xpath("//div[@class='item_pricebar']");
+    By errorFN = By.xpath("//h3[@data-test='error']");
     By continueShopping = By.xpath("//*[@id=\"continue-shopping\"]");
     By cancelButton = By.xpath("//*[@id=\"cancel\"]");
 

@@ -24,7 +24,7 @@ public class BaseTest {
         productsPage = new ProductsPage(driver);
         productPage = new ProductPage(driver);
     }
-    public static void setupPreconditionsCart(){
+    public static void  setupPreconditionsCart(){
         productsPage.addToCard();
         productsPage.clickCartIcon();
         cartPage = new CartPage(driver);

@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 public class LoginTests extends ForLoginTest{
     @Test(description = "open Log in page and find some elements")
     public void logInPage(){
-        loginPage = new LoginPage(driver);
         loginPage.login("standard_user", "secret_sauce");
         loginPage.clickLoginButton();
         Assert.assertTrue(productsPage.getLogo().contains("Swag Labs"));
+        productsPage.logoutGeneral();
     }
     @Test(description = "enter wrong credentials")
     public void logInPageWrong(){

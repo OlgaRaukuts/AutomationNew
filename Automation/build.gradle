@@ -1,7 +1,7 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.0'
 }
-
 group 'org.example'
 version '1.0-SNAPSHOT'
 
@@ -13,6 +13,7 @@ dependencies {
     implementation 'org.testng:testng:7.7.0'
     implementation 'org.seleniumhq.selenium:selenium-java:4.11.0'
     implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.16.1'
+    implementation 'io.qameta.allure:allure-testng:2.19.0'
 }
 
 test {
@@ -23,4 +24,25 @@ test {
         events "PASSED", "FAILED", "SKIPPED"
     }
 }
+// Define the version of AspectJ
+def aspectJVersion = "1.9.20.1"
+
+// Define configuration for AspectJ agent
+configurations {
+    agent {
+        canBeResolved = true
+        canBeConsumed = true
+    }
+}
+
+dependencies {
+    // Add aspectjweaver dependency
+    agent "org.aspectj:aspectjweaver:$aspectJVersion"
+}
+
+// Configure javaagent for test execution
+test {
+    jvmArgs = [ "-javaagent:${configurations.agent.singleFile}" ]
+}
+
 

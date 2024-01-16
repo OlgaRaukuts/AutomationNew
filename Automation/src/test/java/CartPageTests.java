@@ -30,17 +30,17 @@ public class CartPageTests extends BaseTest{
         Assert.assertTrue(cartPage.getFinishedOrder());
 
     }
-/*   @Test(description = "checkout without filling checkout form")
+ /* @Test(description = "checkout without filling checkout form")
     public void checkoutEmptyCheckoutForm(){
+        BaseTest.setupPreconditionsCart();
         cartPage.clickCheckoutButton();
         cartPage.clickContinueButton();
         Assert.assertTrue(cartPage.getErrorFN().contains("Error: First Name is required"));
         cartPage.clickCancelButton();
         cartPage.clickContinueShopping();
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
+        //productsPage.clickSideBarMenu();
     }
 
- */
+  */
 
 }

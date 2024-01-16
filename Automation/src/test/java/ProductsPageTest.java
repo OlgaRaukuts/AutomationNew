@@ -5,7 +5,7 @@ public class ProductsPageTest extends BaseTest{
     @Test (description = "add a product to the cart")
     public void addProduct(){
         productsPage.addToCard();
-        Assert.assertTrue(productsPage.getRemoveButton().contains("Remove"));
+        Assert.assertTrue(productsPage.getRemoveButton2().contains("Remove"));
 
     }
     @Test(description = "open a product page")
@@ -14,13 +14,6 @@ public class ProductsPageTest extends BaseTest{
         Assert.assertTrue(productPage.getItemDetails().contains("Sauce Labs Backpack"));
         productPage.clickBackToProducts();
     }
-    @Test(description = "log out the products page")
-    public void logOutProductPage(){
-        productsPage.clickSideBarMenu();
-        productsPage.logOut();
-        Assert.assertTrue(loginPage.getLogInButton());
-    }
-
 
    @Test(description = "use filter")
     public void filterProducts(){

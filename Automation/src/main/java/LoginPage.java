@@ -11,7 +11,7 @@ public class LoginPage {
     By userName = By.xpath("//*[@id=\"user-name\"]");
     By password = By.xpath("//*[@id=\"password\"]");
     By loginButton = By.xpath("//*[@id=\"login-button\"]");
-    By errorMessage = By.xpath("/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3");
+    By errorMessage = By.xpath("//h3[@data-test='error']");
 
     public void setUsernameField(String username) {
         driver.findElement(userName).sendKeys(username);

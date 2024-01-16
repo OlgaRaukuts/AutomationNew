@@ -8,29 +8,33 @@ public class ProductsPage {
         this.driver = driver;
     }
     By addToCardButton = By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]");
-    By getAddToCardButton2 = By.xpath("//*[@id=\"add-to-cart-test.allthethings()-t-shirt-(red)\"]");
+    By addToCardButton2 = By.xpath("//button[@id='add-to-cart-sauce-labs-bike-light']");
 
-    By addToCardItem3 = By.xpath("//*[@id=\"add-to-cart-sauce-labs-bolt-t-shirt\"]");
-    By cartBadge = By.xpath("/html/body/div/div/div/div[1]/div[1]/div[3]/a/span");
-    By removeButton = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]");
-    By pageLogo = By.xpath("/html/body/div/div/div/div[1]/div[1]/div[2]/div");
-    By inventoryItemLink = By.xpath("/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/a/div");
+    By addToCardItem3 = By.xpath("//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']");
+    By cartBadge = By.xpath("//a[@class='shopping_cart_link']");
+    By removeButton = By.xpath("//button[@id='remove-sauce-labs-bolt-t-shirt']");
+    By removeButton2 = By.xpath("//button[@id='remove-sauce-labs-backpack']");
+    By pageLogo = By.xpath("//div[@class='app_logo']");
+    By inventoryItemLink = By.xpath("//div[normalize-space()='Sauce Labs Backpack']");
 
-    By logoutLink = By.xpath("//*[@id=\"logout_sidebar_link\"]");
-    By sideBarMenu = By.xpath("//*[@id=\"react-burger-menu-btn\"]");
-    By filterMenu = By.xpath("/html/body/div/div/div/div[1]/div[2]/div/span/select");
-    By cartIcon = By.xpath("/html/body/div/div/div/div[1]/div[1]/div[3]/a");
+    By logoutLink = By.xpath("//a[@id='logout_sidebar_link']");
+    By sideBarMenu = By.xpath("//button[@id='react-burger-menu-btn']");
+    By filterMenu = By.xpath("//select[@class='product_sort_container']");
+    By cartIcon = By.xpath("//a[@class='shopping_cart_link']");
     public void addToCard(){
         driver.findElement(addToCardButton).click();
     }
     public void addToCard2(){
-        driver.findElement(getAddToCardButton2).click();
+        driver.findElement(addToCardButton2).click();
     }
     public String getCartBadge(){
         return driver.findElement(cartBadge).getText();
     }
     public String getRemoveButton(){
         return driver.findElement(removeButton).getText();
+    }
+    public String getRemoveButton2(){
+        return driver.findElement(removeButton2).getText();
     }
     public String getLogo(){
         return driver.findElement(pageLogo).getText();
