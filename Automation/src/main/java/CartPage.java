@@ -6,23 +6,21 @@ public class CartPage {
     public CartPage (WebDriver driver){
         this.driver = driver;
     }
-
-
-    By checkoutButton = By.xpath("//*[@id=\"checkout\"]");
-    By firstName = By.xpath("//*[@id=\"first-name\"]");
-    By lastName = By.xpath("//*[@id=\"last-name\"]");
-    By zipCode = By.xpath("//*[@id=\"postal-code\"]");
-    By continueButton = By.xpath("//*[@id=\"continue\"]");
-    By checkoutOverview = By.xpath("//span[@class='title']");
-    By finishButton = By.xpath("//*[@id=\"finish\"]");
-    By finishedOrder = By.xpath("//span[@class='title']");
-    By backHomeButton = By.xpath("//*[@id=\"back-to-products\"]");
-    By checkoutInfo = By.xpath("//div[@class='checkout_info']");
-    By removeButtonCartPage = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]");
-    By cartItem = By.xpath("//div[@class='item_pricebar']");
-    By errorFN = By.xpath("//h3[@data-test='error']");
-    By continueShopping = By.xpath("//*[@id=\"continue-shopping\"]");
-    By cancelButton = By.xpath("//*[@id=\"cancel\"]");
+    private By checkoutButton = By.xpath("//*[@id=\"checkout\"]");
+    private By firstName = By.xpath("//*[@id=\"first-name\"]");
+    private By lastName = By.xpath("//*[@id=\"last-name\"]");
+    private By zipCode = By.xpath("//*[@id=\"postal-code\"]");
+    private By continueButton = By.xpath("//*[@id=\"continue\"]");
+    private By checkoutOverview = By.xpath("//span[@class='title']");
+    private By finishButton = By.xpath("//*[@id=\"finish\"]");
+    private By finishedOrder = By.xpath("//span[@class='title']");
+    private By backHomeButton = By.xpath("//*[@id=\"back-to-products\"]");
+    private By checkoutInfo = By.xpath("//div[@class='checkout_info']");
+    private By removeButtonCartPage = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]");
+    private By cartItem = By.xpath("//div[@class='item_pricebar']");
+    private By errorFN = By.xpath("//h3[@data-test='error']");
+    private By continueShopping = By.xpath("//*[@id=\"continue-shopping\"]");
+    private By cancelButton = By.xpath("//*[@id=\"cancel\"]");
 
     public void clickCheckoutButton(){
         driver.findElement(checkoutButton).click();

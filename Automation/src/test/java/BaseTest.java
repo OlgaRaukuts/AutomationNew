@@ -9,16 +9,15 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
-    public static  WebDriver driver;
-    public static ProductsPage productsPage;
-    public static LoginPage loginPage;
-    public static ProductPage productPage;
-    public static CartPage cartPage;
-    static Logger log = LogManager.getLogger();
+    protected static  WebDriver driver = new FirefoxDriver();;
+    protected static ProductsPage productsPage;
+    protected static LoginPage loginPage;
+    protected static ProductPage productPage;
+    protected static CartPage cartPage;
+    protected static Logger log = LogManager.getLogger();
     @BeforeClass
     public static void setup(){
         System.setProperty("webdriver.firefox.driver", ConfProperties.getProperty("firefoxdriver"));
-        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(ConfProperties.getProperty("loginpage"));
         log.info("Setup finished");
@@ -30,19 +29,19 @@ public class BaseTest {
         loginPage.clickLoginButton();
         productsPage = new ProductsPage(driver);
         productPage = new ProductPage(driver);
-    }
-    public static void  setupPreconditionsCart(){
+        log.info("Setup preconditions finished");
         productsPage.addToCard();
         productsPage.clickCartIcon();
         cartPage = new CartPage(driver);
     }
-
     @AfterMethod
     public void logOut(){
         productsPage.logoutGeneral();
+        log.info("Log out successfully");
     }
     @AfterClass
     public void close() {
         driver.close();
+        log.info("Driver closed successfully");
     }
 }

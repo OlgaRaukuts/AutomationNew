@@ -8,19 +8,17 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    By userName = By.xpath("//*[@id=\"user-name\"]");
-    By password = By.xpath("//*[@id=\"password\"]");
-    By loginButton = By.xpath("//*[@id=\"login-button\"]");
-    By errorMessage = By.xpath("//h3[@data-test='error']");
+    private By userName = By.xpath("//*[@id=\"user-name\"]");
+    private By password = By.xpath("//*[@id=\"password\"]");
+    private By loginButton = By.xpath("//*[@id=\"login-button\"]");
+    private By errorMessage = By.xpath("//h3[@data-test='error']");
 
     public void setUsernameField(String username) {
         driver.findElement(userName).sendKeys(username);
-        System.out.println("The username was entered");
     }
 
     public void setPasswordField(String passwordU) {
         driver.findElement(password).sendKeys(passwordU);
-        System.out.println("The password was entered");
     }
 
     public void clickLoginButton(){

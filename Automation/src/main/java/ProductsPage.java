@@ -7,20 +7,19 @@ public class ProductsPage {
     public ProductsPage (WebDriver driver){
         this.driver = driver;
     }
-    By addToCardButton = By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]");
-    By addToCardButton2 = By.xpath("//button[@id='add-to-cart-sauce-labs-bike-light']");
+    private By addToCardButton = By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]");
+    private By addToCardButton2 = By.xpath("//button[@id='add-to-cart-sauce-labs-bike-light']");
 
-    By addToCardItem3 = By.xpath("//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']");
-    By cartBadge = By.xpath("//a[@class='shopping_cart_link']");
-    By removeButton = By.xpath("//button[@id='remove-sauce-labs-bolt-t-shirt']");
-    By removeButton2 = By.xpath("//button[@id='remove-sauce-labs-backpack']");
-    By pageLogo = By.xpath("//div[@class='app_logo']");
-    By inventoryItemLink = By.xpath("//div[normalize-space()='Sauce Labs Backpack']");
-
-    By logoutLink = By.xpath("//a[@id='logout_sidebar_link']");
-    By sideBarMenu = By.xpath("//button[@id='react-burger-menu-btn']");
-    By filterMenu = By.xpath("//select[@class='product_sort_container']");
-    By cartIcon = By.xpath("//a[@class='shopping_cart_link']");
+    private By addToCardItem3 = By.xpath("//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']");
+    private By cartBadge = By.xpath("//a[@class='shopping_cart_link']");
+    private By removeButton = By.xpath("//button[@id='remove-sauce-labs-bolt-t-shirt']");
+    private By removeButton2 = By.xpath("//button[@id='remove-sauce-labs-backpack']");
+    private By pageLogo = By.xpath("//div[@class='app_logo']");
+    private By inventoryItemLink = By.xpath("//div[normalize-space()='Sauce Labs Backpack']");
+    private By logoutLink = By.xpath("//a[@id='logout_sidebar_link']");
+    private By sideBarMenu = By.xpath("//button[@id='react-burger-menu-btn']");
+    private By filterMenu = By.xpath("//select[@class='product_sort_container']");
+    private By cartIcon = By.xpath("//a[@class='shopping_cart_link']");
     public void addToCard(){
         driver.findElement(addToCardButton).click();
     }

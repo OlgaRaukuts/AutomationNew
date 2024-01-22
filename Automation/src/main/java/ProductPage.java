@@ -7,8 +7,8 @@ public class ProductPage {
         this.driver = driver;
     }
 
-    By itemDetailsName = By.xpath("/html/body/div/div/div/div[2]/div/div/div[2]/div[1]");
-    By backToProducts = By.xpath("//*[@id=\"back-to-products\"]");
+    private By itemDetailsName = By.xpath("//div[@class='inventory_details_name large_size']");
+    private By backToProducts = By.xpath("//*[@id=\"back-to-products\"]");
 
     public String getItemDetails(){
         return driver.findElement(itemDetailsName).getText();
