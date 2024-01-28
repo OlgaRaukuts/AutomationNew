@@ -1,5 +1,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CartPage {
     private WebDriver driver;
@@ -18,6 +22,7 @@ public class CartPage {
     private By checkoutInfo = By.xpath("//div[@class='checkout_info']");
     private By removeButtonCartPage = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]");
     private By cartItem = By.xpath("//div[@class='item_pricebar']");
+    private By cartItemEmpty = By.xpath("//a[@class='shopping_cart_link']");
     private By errorFN = By.xpath("//h3[@data-test='error']");
     private By continueShopping = By.xpath("//*[@id=\"continue-shopping\"]");
     private By cancelButton = By.xpath("//*[@id=\"cancel\"]");
@@ -58,7 +63,7 @@ public class CartPage {
         driver.findElement(removeButtonCartPage).click();
     }
     public boolean getCartItem(){
-        return !driver.findElement(cartItem).isDisplayed();
+        return driver.findElement(cartItemEmpty).isDisplayed();
     }
     public String getErrorFN(){
         return driver.findElement(errorFN).getText();
@@ -73,6 +78,10 @@ public class CartPage {
         this.setFirstName(strFirstName);
         this.setLastName(strLastName);
         this.setZipCode(strZipCode);
+    }
+    public void waitForTheElementCkt(Duration time){
+        WebDriverWait wait = new WebDriverWait(driver, time);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"checkout\"]")));
     }
 
 

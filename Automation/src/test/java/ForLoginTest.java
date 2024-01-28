@@ -7,6 +7,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.util.concurrent.TimeUnit;
+
 public class ForLoginTest {
     protected static WebDriver driver = new FirefoxDriver();;
     protected static ProductsPage productsPage;
@@ -22,6 +24,7 @@ public class ForLoginTest {
     @BeforeMethod
     public static void setupPreconditions(){
         loginPage = new LoginPage(driver);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         productsPage = new ProductsPage(driver);
         logger.info("Setup preconditions - done");
 

@@ -30,8 +30,6 @@ public class BaseTest {
         productsPage = new ProductsPage(driver);
         productPage = new ProductPage(driver);
         log.info("Setup preconditions finished");
-        productsPage.addToCard();
-        productsPage.clickCartIcon();
         cartPage = new CartPage(driver);
     }
     @AfterMethod

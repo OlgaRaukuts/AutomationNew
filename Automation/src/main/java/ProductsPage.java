@@ -1,6 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ProductsPage {
     private WebDriver driver;
@@ -66,5 +70,17 @@ public class ProductsPage {
         clickSideBarMenu();
         logOut();
     }
+    public void waitTheElementTest1(Duration time) {
+        WebDriverWait wait = new WebDriverWait(driver, time);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='remove-sauce-labs-backpack']")));
+    }
 
+    public void waitTheElementFilter(Duration time) {
+        WebDriverWait wait = new WebDriverWait(driver, time);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@class='product_sort_container']")));
+    }
+    public void waitTheElementRemoveBtn(Duration time){
+        WebDriverWait wait = new WebDriverWait(driver,time);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='remove-sauce-labs-bolt-t-shirt']")));
+    }
 }
