@@ -54,5 +54,4 @@ public class CartPageTests extends BaseTest{
         cartPage.clickCancelButton();
         log.info("It doesn't work without filling out the necessary fields ");
     }
-
 }

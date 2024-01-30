@@ -1,5 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -9,17 +12,19 @@ public class ProductPage {
     private WebDriver driver;
     public ProductPage (WebDriver driver){
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
-
-    private By itemDetailsName = By.xpath("//div[@class='inventory_details_name large_size']");
-    private By backToProducts = By.xpath("//*[@id=\"back-to-products\"]");
+    @FindBy(xpath = "//div[@class='inventory_details_name large_size']")
+    private WebElement itemDetailsName;
+    @FindBy(xpath = "//*[@id=\"back-to-products\"]")
+    private WebElement backToProducts;
     //private By addToCartButton = By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']");
 
     public String getItemDetails(){
-        return driver.findElement(itemDetailsName).getText();
+        return itemDetailsName.getText();
     }
     public void clickBackToProducts(){
-        driver.findElement(backToProducts).click();
+        backToProducts.click();
     }
 
     public void waitTheElementProductPage(Duration time) {

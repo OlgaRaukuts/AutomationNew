@@ -1,5 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,23 +13,27 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
-
-    private By userName = By.xpath("//*[@id=\"user-name\"]");
-    private By password = By.xpath("//*[@id=\"password\"]");
-    private By loginButton = By.xpath("//*[@id=\"login-button\"]");
-    private By errorMessage = By.xpath("//h3[@data-test='error']");
+    @FindBy(xpath = "//*[@id=\"user-name\"]")
+    private WebElement userName;
+    @FindBy(xpath = "//*[@id=\"password\"]")
+    private WebElement password;
+    @FindBy(xpath = "//*[@id=\"login-button\"]")
+    private WebElement loginButton;
+    @FindBy(xpath ="//h3[@data-test='error']" )
+    private WebElement errorMessage;
 
     public void setUsernameField(String username) {
-        driver.findElement(userName).sendKeys(username);
+       userName.sendKeys(username);
     }
 
     public void setPasswordField(String passwordU) {
-        driver.findElement(password).sendKeys(passwordU);
+        password.sendKeys(passwordU);
     }
 
     public void clickLoginButton(){
-        driver.findElement(loginButton).click();
+        loginButton.click();
     }
     public void login(String strUserName, String strPasword) {
         this.setUsernameField(strUserName);
@@ -34,11 +41,11 @@ public class LoginPage {
     }
 
     public String getErrorMessage(){
-        return driver.findElement(errorMessage).getText();
+        return errorMessage.getText();
     }
 
     public boolean getLogInButton(){
-        return driver.findElement(loginButton).isDisplayed();
+        return loginButton.isDisplayed();
     }
     public void waitforLogIn(Duration time){
         WebDriverWait wait = new WebDriverWait(driver, time);

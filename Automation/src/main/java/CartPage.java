@@ -1,5 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -9,70 +12,87 @@ public class CartPage {
     private WebDriver driver;
     public CartPage (WebDriver driver){
         this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
-    private By checkoutButton = By.xpath("//*[@id=\"checkout\"]");
-    private By firstName = By.xpath("//*[@id=\"first-name\"]");
-    private By lastName = By.xpath("//*[@id=\"last-name\"]");
-    private By zipCode = By.xpath("//*[@id=\"postal-code\"]");
-    private By continueButton = By.xpath("//*[@id=\"continue\"]");
-    private By checkoutOverview = By.xpath("//span[@class='title']");
-    private By finishButton = By.xpath("//*[@id=\"finish\"]");
-    private By finishedOrder = By.xpath("//span[@class='title']");
-    private By backHomeButton = By.xpath("//*[@id=\"back-to-products\"]");
-    private By checkoutInfo = By.xpath("//div[@class='checkout_info']");
-    private By removeButtonCartPage = By.xpath("//*[@id=\"remove-sauce-labs-backpack\"]");
-    private By cartItem = By.xpath("//div[@class='item_pricebar']");
-    private By cartItemEmpty = By.xpath("//a[@class='shopping_cart_link']");
-    private By errorFN = By.xpath("//h3[@data-test='error']");
-    private By continueShopping = By.xpath("//*[@id=\"continue-shopping\"]");
-    private By cancelButton = By.xpath("//*[@id=\"cancel\"]");
+    @FindBy(xpath = "//*[@id=\"checkout\"]")
+    private WebElement checkoutButton;
+    @FindBy(xpath = "//*[@id=\"first-name\"]")
+    private WebElement firstName;
+    @FindBy(xpath = "//*[@id=\"last-name\"]")
+    private WebElement lastName;
+    @FindBy(xpath ="//*[@id=\"postal-code\"]" )
+    private WebElement zipCode;
+    @FindBy(xpath = "//*[@id=\"continue\"]")
+    private WebElement continueButton;
+    @FindBy(xpath = "//span[@class='title']")
+    private WebElement checkoutOverview;
+    @FindBy(xpath = "//*[@id=\"finish\"]")
+    private WebElement finishButton;
+    @FindBy(xpath ="//span[@class='title']" )
+    private WebElement finishedOrder;
+    @FindBy(xpath = "//*[@id=\"back-to-products\"]")
+    private WebElement backHomeButton;
+    @FindBy(xpath = "//div[@class='checkout_info']")
+    private WebElement checkoutInfo;
+    @FindBy(xpath = "//*[@id=\"remove-sauce-labs-backpack\"]")
+    private WebElement removeButtonCartPage;
+    @FindBy(xpath = "//div[@class='item_pricebar']")
+    private WebElement cartItem;
+    @FindBy(xpath = "//a[@class='shopping_cart_link']")
+    private WebElement cartItemEmpty;
+    @FindBy(xpath ="//h3[@data-test='error']" )
+    private WebElement errorFN;
+    @FindBy(xpath = "//*[@id=\"continue-shopping\"]")
+    private WebElement continueShopping;
+    @FindBy(xpath = "//*[@id=\"cancel\"]")
+    private WebElement cancelButton;
 
     public void clickCheckoutButton(){
-        driver.findElement(checkoutButton).click();
+        checkoutButton.click();
     }
     public void setFirstName(String firstname){
-        driver.findElement(firstName).sendKeys(firstname);
+        firstName.sendKeys(firstname);
     }
     public void setLastName(String lastname){
-        driver.findElement(lastName).sendKeys(lastname);
+        lastName.sendKeys(lastname);
     }
     public void setZipCode(String zipcode){
-        driver.findElement(zipCode).sendKeys(zipcode);
+       zipCode.sendKeys(zipcode);
     }
 
     public void clickContinueButton(){
-        driver.findElement(continueButton).click();
+        continueButton.click();
     }
 
     public boolean getCheckoutOverview(){
-        return driver.findElement(checkoutOverview).isDisplayed();
+       return checkoutOverview.isDisplayed();
     }
     public void clickFinishButton(){
-        driver.findElement(finishButton).click();
+        finishButton.click();
     }
     public boolean getFinishedOrder(){
-        return driver.findElement(finishedOrder).isDisplayed();
+        return finishedOrder.isDisplayed();
     }
     public void clickBackHomeButton(){
-        driver.findElement(backHomeButton).click();
+        backHomeButton.click();
     }
     public boolean getCheckoutInfoForm(){
-        return driver.findElement(checkoutInfo).isDisplayed();
+        return checkoutInfo.isDisplayed();
     }
     public void removeProduct(){
-        driver.findElement(removeButtonCartPage).click();
+        removeButtonCartPage.click();
     }
     public boolean getCartItem(){
-        return driver.findElement(cartItemEmpty).isDisplayed();
+        return cartItemEmpty.isDisplayed();
     }
     public String getErrorFN(){
-        return driver.findElement(errorFN).getText();
+        return errorFN.getText();
     }
     public void clickContinueShopping(){
-        driver.findElement(continueShopping).click();
+        continueShopping.click();
     }
     public void clickCancelButton(){
-        driver.findElement(cancelButton).click();
+        cancelButton.click();
     }
     public void fillTheForm(String strFirstName, String strLastName, String strZipCode){
         this.setFirstName(strFirstName);

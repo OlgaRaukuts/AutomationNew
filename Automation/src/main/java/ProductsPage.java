@@ -1,5 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,60 +13,72 @@ public class ProductsPage {
     private WebDriver driver;
     public ProductsPage (WebDriver driver){
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
-    private By addToCardButton = By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]");
-    private By addToCardButton2 = By.xpath("//button[@id='add-to-cart-sauce-labs-bike-light']");
-
-    private By addToCardItem3 = By.xpath("//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']");
-    private By cartBadge = By.xpath("//a[@class='shopping_cart_link']");
-    private By removeButton = By.xpath("//button[@id='remove-sauce-labs-bolt-t-shirt']");
-    private By removeButton2 = By.xpath("//button[@id='remove-sauce-labs-backpack']");
-    private By pageLogo = By.xpath("//div[@class='app_logo']");
-    private By inventoryItemLink = By.xpath("//div[normalize-space()='Sauce Labs Backpack']");
-    private By logoutLink = By.xpath("//a[@id='logout_sidebar_link']");
-    private By sideBarMenu = By.xpath("//button[@id='react-burger-menu-btn']");
-    private By filterMenu = By.xpath("//select[@class='product_sort_container']");
-    private By cartIcon = By.xpath("//a[@class='shopping_cart_link']");
+    @FindBy(xpath ="//*[@id=\"add-to-cart-sauce-labs-backpack\"]" )
+    private WebElement addToCardButton;
+    @FindBy(xpath = "//button[@id='add-to-cart-sauce-labs-bike-light']")
+    private WebElement addToCardButton2;
+    @FindBy(xpath = "//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']")
+    private WebElement addToCardItem3;
+    @FindBy(xpath ="//a[@class='shopping_cart_link']" )
+    private WebElement cartBadge;
+    @FindBy(xpath = "//button[@id='remove-sauce-labs-bolt-t-shirt']")
+    private WebElement removeButton;
+    @FindBy(xpath ="//button[@id='remove-sauce-labs-backpack']" )
+    private WebElement removeButton2;
+    @FindBy(xpath = "//div[@class='app_logo']")
+    private WebElement pageLogo;
+    @FindBy(xpath = "//div[normalize-space()='Sauce Labs Backpack']")
+    private WebElement inventoryItemLink;
+    @FindBy(xpath = "//a[@id='logout_sidebar_link']")
+    private WebElement logoutLink;
+    @FindBy(xpath = "//button[@id='react-burger-menu-btn']")
+    private WebElement sideBarMenu;
+    @FindBy(xpath ="//select[@class='product_sort_container']" )
+    private WebElement filterMenu;
+    @FindBy(xpath ="//a[@class='shopping_cart_link']" )
+    private WebElement cartIcon;
     public void addToCard(){
-        driver.findElement(addToCardButton).click();
+        addToCardButton.click();
     }
     public void addToCard2(){
-        driver.findElement(addToCardButton2).click();
+        addToCardButton2.click();
     }
     public String getCartBadge(){
-        return driver.findElement(cartBadge).getText();
+        return cartBadge.getText();
     }
     public String getRemoveButton(){
-        return driver.findElement(removeButton).getText();
+        return removeButton.getText();
     }
     public String getRemoveButton2(){
-        return driver.findElement(removeButton2).getText();
+        return removeButton2.getText();
     }
     public String getLogo(){
-        return driver.findElement(pageLogo).getText();
+        return pageLogo.getText();
     }
     public void clickInventoryItemLink(){
-        driver.findElement(inventoryItemLink).click();
+        inventoryItemLink.click();
     }
     public void logOut(){
-        driver.findElement(logoutLink).click();
+        logoutLink.click();
     }
     public void clickSideBarMenu(){
-        driver.findElement(sideBarMenu).click();
+        sideBarMenu.click();
     }
     public void clickFilter(){
-        Select filterSelect = new Select(driver.findElement(filterMenu));
+        Select filterSelect = new Select(filterMenu);
         filterSelect.selectByVisibleText("Name (Z to A)");
-        driver.findElement(filterMenu).click();
+        filterMenu.click();
     }
     public String getFilter(){
-        return driver.findElement(filterMenu).getText();
+        return filterMenu.getText();
     }
     public void clickCartIcon(){
-        driver.findElement(cartIcon).click();
+        cartIcon.click();
     }
     public void addToCard3(){
-        driver.findElement(addToCardItem3).click();
+        addToCardItem3.click();
     }
 
     public void logoutGeneral(){
