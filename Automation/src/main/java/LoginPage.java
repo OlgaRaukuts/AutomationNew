@@ -8,11 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage {
-    private WebDriver driver;
-
+public class LoginPage implements DriverNew{
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//*[@id=\"user-name\"]")

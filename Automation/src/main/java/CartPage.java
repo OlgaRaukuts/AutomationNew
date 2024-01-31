@@ -5,13 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
-public class CartPage {
-    private WebDriver driver;
+public class CartPage implements DriverNew{
     public CartPage (WebDriver driver){
-        this.driver = driver;
         PageFactory.initElements(driver,this);
     }
     @FindBy(xpath = "//*[@id=\"checkout\"]")

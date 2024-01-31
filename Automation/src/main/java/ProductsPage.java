@@ -9,10 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ProductsPage {
-    private WebDriver driver;
+public class ProductsPage implements DriverNew {
     public ProductsPage (WebDriver driver){
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath ="//*[@id=\"add-to-cart-sauce-labs-backpack\"]" )

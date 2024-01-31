@@ -8,10 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ProductPage {
-    private WebDriver driver;
+public class ProductPage implements DriverNew {
     public ProductPage (WebDriver driver){
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//div[@class='inventory_details_name large_size']")
