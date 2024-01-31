@@ -1,20 +1,15 @@
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.example.ConfProperties;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseTest {
-    protected static  WebDriver driver = new FirefoxDriver();;
+public class BaseTest extends Driver{
     protected static ProductsPage productsPage;
     protected static LoginPage loginPage;
     protected static ProductPage productPage;
     protected static CartPage cartPage;
-    protected static Logger log = LogManager.getLogger();
+
     @BeforeClass
     public static void setup(){
         System.setProperty("webdriver.firefox.driver", ConfProperties.getProperty("firefoxdriver"));
