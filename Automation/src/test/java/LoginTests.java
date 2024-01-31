@@ -11,7 +11,7 @@ public class LoginTests extends ForLoginTest{
         loginPage.waitforLogIn(Duration.ofSeconds(10));
         loginPage.clickLoginButton();
         Assert.assertTrue(productsPage.getLogo().contains("Swag Labs"));
-        logger.info("Log in page successfully opened");
+        log.info("Log in page successfully opened");
         productsPage.logoutGeneral();
 
     }
@@ -21,6 +21,6 @@ public class LoginTests extends ForLoginTest{
         loginPage.waitforLogIn(Duration.ofSeconds(10));
         loginPage.clickLoginButton();
         Assert.assertTrue(loginPage.getErrorMessage().contains("password do not match any user in this service"));
-        logger.info("The error message appeared");
+        log.info("The error message appeared");
     }
 }

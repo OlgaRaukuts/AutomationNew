@@ -4,7 +4,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseTest extends Driver{
+public class BaseTest implements DriverNew{
     protected static ProductsPage productsPage;
     protected static LoginPage loginPage;
     protected static ProductPage productPage;

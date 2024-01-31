@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
-public class ForLoginTest extends Driver{
+public class ForLoginTest implements DriverNew{
     protected static ProductsPage productsPage;
     protected static LoginPage loginPage;
     @BeforeClass
