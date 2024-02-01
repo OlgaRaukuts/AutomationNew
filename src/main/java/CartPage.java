@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class CartPage implements DriverNew{
+public class CartPage {
     public CartPage (WebDriver driver){
         PageFactory.initElements(driver,this);
     }
@@ -97,7 +97,7 @@ public class CartPage implements DriverNew{
         this.setZipCode(strZipCode);
     }
     public void waitForTheElementCkt(Duration time){
-        WebDriverWait wait = new WebDriverWait(driver, time);
+        WebDriverWait wait = new WebDriverWait(Driver.driver, time);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"checkout\"]")));
     }
 

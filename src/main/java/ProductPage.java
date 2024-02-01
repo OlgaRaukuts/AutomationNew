@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ProductPage implements DriverNew {
+public class ProductPage {
     public ProductPage (WebDriver driver){
         PageFactory.initElements(driver, this);
     }
@@ -26,7 +26,7 @@ public class ProductPage implements DriverNew {
     }
 
     public void waitTheElementProductPage(Duration time) {
-        WebDriverWait wait = new WebDriverWait(driver, time);
+        WebDriverWait wait = new WebDriverWait(Driver.driver, time);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']")));
     }
 

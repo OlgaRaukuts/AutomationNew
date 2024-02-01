@@ -4,7 +4,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseTest implements DriverNew{
+public class BaseTest{
     protected static ProductsPage productsPage;
     protected static LoginPage loginPage;
     protected static ProductPage productPage;
@@ -13,28 +13,25 @@ public class BaseTest implements DriverNew{
     @BeforeClass
     public static void setup(){
         System.setProperty("webdriver.firefox.driver", ConfProperties.getProperty("firefoxdriver"));
-        driver.manage().window().maximize();
-        driver.get(ConfProperties.getProperty("loginpage"));
-        log.info("Setup finished");
+        Driver.driver.manage().window().maximize();
+        Driver.driver.get(ConfProperties.getProperty("loginpage"));
+
     }
     @BeforeMethod
     public static void setupPreconditions(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(Driver.driver);
         loginPage.login("standard_user", "secret_sauce");
         loginPage.clickLoginButton();
-        productsPage = new ProductsPage(driver);
-        productPage = new ProductPage(driver);
-        log.info("Setup preconditions finished");
-        cartPage = new CartPage(driver);
+        productsPage = new ProductsPage(Driver.driver);
+        productPage = new ProductPage(Driver.driver);
+        cartPage = new CartPage(Driver.driver);
     }
     @AfterMethod
     public void logOut(){
         productsPage.logoutGeneral();
-        log.info("Log out successfully");
     }
     @AfterClass
     public void close() {
-        driver.close();
-        log.info("Driver closed successfully");
+        Driver.driver.close();
     }
 }

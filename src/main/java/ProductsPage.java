@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ProductsPage implements DriverNew {
+public class ProductsPage {
     public ProductsPage (WebDriver driver){
         PageFactory.initElements(driver, this);
     }
@@ -84,16 +84,16 @@ public class ProductsPage implements DriverNew {
         logOut();
     }
     public void waitTheElementTest1(Duration time) {
-        WebDriverWait wait = new WebDriverWait(driver, time);
+        WebDriverWait wait = new WebDriverWait(Driver.driver, time);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='remove-sauce-labs-backpack']")));
     }
 
     public void waitTheElementFilter(Duration time) {
-        WebDriverWait wait = new WebDriverWait(driver, time);
+        WebDriverWait wait = new WebDriverWait(Driver.driver, time);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@class='product_sort_container']")));
     }
     public void waitTheElementRemoveBtn(Duration time){
-        WebDriverWait wait = new WebDriverWait(driver,time);
+        WebDriverWait wait = new WebDriverWait(Driver.driver,time);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='remove-sauce-labs-bolt-t-shirt']")));
     }
 }

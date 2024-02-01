@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage implements DriverNew{
+public class LoginPage {
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -45,7 +45,7 @@ public class LoginPage implements DriverNew{
         return loginButton.isDisplayed();
     }
     public void waitforLogIn(Duration time){
-        WebDriverWait wait = new WebDriverWait(driver, time);
+        WebDriverWait wait = new WebDriverWait(Driver.driver, time);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"login-button\"]")));
     }
 
