@@ -35,3 +35,6 @@ bin/
 .bat
 gradlew
 allure-results
+build/tmp/compileJava
+build/tmp/compileTestJava/compileTransaction/stash-dir
+build/tmp/compileTestJava
