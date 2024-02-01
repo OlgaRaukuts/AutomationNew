@@ -34,3 +34,6 @@ bin/
 .iml
 .bat
 gradlew
+allure-results
+build/tmp/compileJava
+build
