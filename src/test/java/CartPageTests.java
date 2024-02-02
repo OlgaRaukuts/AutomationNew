@@ -18,7 +18,7 @@ public class CartPageTests extends BaseTest{
         cartPage.clickFinishButton();
         Driver.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)) ;
         Assert.assertTrue(cartPage.getFinishedOrder());
-        //Driver.log.info("The buying was finished successfully");
+        Driver.log.info("The buying was finished successfully");
     }
    @Test(description = "remove a product from the cart", priority = 2)
     public void removeProduct(){
@@ -27,7 +27,7 @@ public class CartPageTests extends BaseTest{
        Driver.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)) ;
        cartPage.removeProduct();
        Assert.assertTrue(cartPage.getCartItem());
-       //Driver.log.info("The item was successfully removed");
+       Driver.log.info("The item was successfully removed");
        cartPage.clickContinueShopping();
     }
      @Test(description = "checkout without products", priority = 3)
@@ -39,7 +39,7 @@ public class CartPageTests extends BaseTest{
          cartPage.fillTheForm("olga", "ra", "s233");
          cartPage.clickContinueButton();
          cartPage.clickFinishButton();
-         //Driver.log.info("Checkout without products was finished successfully");
+         Driver.log.info("Checkout without products was finished successfully");
          Assert.assertTrue(cartPage.getFinishedOrder());
      }
 
@@ -52,6 +52,6 @@ public class CartPageTests extends BaseTest{
         cartPage.clickContinueButton();
         Assert.assertTrue(cartPage.getErrorFN().contains("Error: First Name is required"));
         cartPage.clickCancelButton();
-        //Driver.log.info("It doesn't work without filling out the necessary fields ");
+        Driver.log.info("It doesn't work without filling out the necessary fields ");
     }
 }

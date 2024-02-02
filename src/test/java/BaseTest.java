@@ -15,6 +15,7 @@ public class BaseTest{
         System.setProperty("webdriver.firefox.driver", ConfProperties.getProperty("firefoxdriver"));
         Driver.driver.manage().window().maximize();
         Driver.driver.get(ConfProperties.getProperty("loginpage"));
+        Driver.log.info("Setup was finished successfully");
 
     }
     @BeforeMethod
@@ -25,10 +26,12 @@ public class BaseTest{
         productsPage = new ProductsPage(Driver.driver);
         productPage = new ProductPage(Driver.driver);
         cartPage = new CartPage(Driver.driver);
+        Driver.log.info("set up preconditions were finished successfully");
     }
     @AfterMethod
     public void logOut(){
         productsPage.logoutGeneral();
+        Driver.log.info("Log out was finished successfully");
     }
     @AfterClass
     public void close() {

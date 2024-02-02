@@ -13,19 +13,19 @@ public class ForLoginTest {
         System.setProperty("webdriver.firefox.driver", ConfProperties.getProperty("firefoxdriver"));
         Driver.driver.manage().window().maximize();
         Driver.driver.get(ConfProperties.getProperty("loginpage"));
-        //Driver.log.info("General Setup was successful");
+        Driver.log.info("General Setup was successful");
     }
     @BeforeMethod
     public static void setupPreconditions(){
         loginPage = new LoginPage(Driver.driver);
         Driver.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         productsPage = new ProductsPage(Driver.driver);
-        //Driver.log.info("Setup preconditions - done");
+        Driver.log.info("Setup preconditions - done");
 
     }
     @AfterClass
     public void close() {
         Driver.driver.close();
-        //Driver.log.info("Driver closed successfully");
+        Driver.log.info("Driver closed successfully");
     }
 }
