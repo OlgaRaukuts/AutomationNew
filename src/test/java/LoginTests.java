@@ -1,4 +1,3 @@
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -10,7 +9,7 @@ public class LoginTests extends ForLoginTest{
         loginPage.login("standard_user", "secret_sauce");
         loginPage.waitforLogIn(Duration.ofSeconds(10));
         loginPage.clickLoginButton();
-        Assert.assertTrue(productsPage.getLogo().contains("Swag Labs"));
+        Asserts.useAssertLogIn();
         Driver.log.info("Log in page successfully opened");
         productsPage.logoutGeneral();
 
@@ -20,7 +19,7 @@ public class LoginTests extends ForLoginTest{
         loginPage.login("standard_user", "secrets_sauce");
         loginPage.waitforLogIn(Duration.ofSeconds(10));
         loginPage.clickLoginButton();
-        Assert.assertTrue(loginPage.getErrorMessage().contains("password do not match any user in this service"));
+        Asserts.useAssertLogInErr();
         Driver.log.info("The error message appeared");
     }
 }
