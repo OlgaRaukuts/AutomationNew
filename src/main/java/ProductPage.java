@@ -18,10 +18,16 @@ public class ProductPage {
     private WebElement backToProducts;
     //private By addToCartButton = By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']");
 
-    public String getItemDetails(){
+    public String getItemDetails() throws NoElementWasFound{
+        if(itemDetailsName == null){
+            throw new NoElementWasFound("There is no Item Name");
+        }
         return itemDetailsName.getText();
     }
-    public void clickBackToProducts(){
+    public void clickBackToProducts() throws NoElementWasFound{
+        if(backToProducts == null){
+            throw new NoElementWasFound("There is no Item Name");
+        }
         backToProducts.click();
     }
 

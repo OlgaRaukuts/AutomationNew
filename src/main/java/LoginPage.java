@@ -29,7 +29,10 @@ public class LoginPage {
         password.sendKeys(passwordU);
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() throws NoElementWasFound{
+        if(loginButton == null){
+            throw new NoElementWasFound("There is no login button");
+        }
         loginButton.click();
     }
     public void login(String strUserName, String strPasword) {
@@ -37,7 +40,10 @@ public class LoginPage {
         this.setPasswordField(strPasword);
     }
 
-    public String getErrorMessage(){
+    public String getErrorMessage() throws NoElementWasFound{
+        if(errorMessage == null){
+            throw new NoElementWasFound("There is no error message");
+        }
         return errorMessage.getText();
     }
 

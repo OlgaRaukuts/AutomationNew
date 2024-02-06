@@ -18,7 +18,7 @@ public class BaseTest{
 
     }
     @BeforeMethod
-    public static void setupPreconditions(){
+    public static void setupPreconditions() throws NoElementWasFound {
         loginPage = new LoginPage(Driver.driver);
         loginPage.login("standard_user", "secret_sauce");
         loginPage.clickLoginButton();
@@ -28,7 +28,7 @@ public class BaseTest{
         Driver.log.info("set up preconditions were finished successfully");
     }
     @AfterMethod
-    public void logOut(){
+    public void logOut() throws NoElementWasFound{
         productsPage.logoutGeneral();
         Driver.log.info("Log out was finished successfully");
     }

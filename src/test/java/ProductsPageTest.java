@@ -5,7 +5,7 @@ import java.time.Duration;
 
 public class ProductsPageTest extends BaseTest{
     @Test (description = "add a product to the cart", priority = 2)
-    public void addProduct(){
+    public void addProduct() throws NoElementWasFound {
         productsPage.addToCard();
         productsPage.waitTheElementTest1(Duration.ofSeconds(10));
         Assert.assertTrue(productsPage.getRemoveButton2().contains("Remove"));
@@ -13,7 +13,7 @@ public class ProductsPageTest extends BaseTest{
 
     }
     @Test(description = "open a product page", priority = 1)
-    public void openAProductPage(){
+    public void openAProductPage() throws NoElementWasFound{
         productsPage.clickInventoryItemLink();
         productPage.waitTheElementProductPage(Duration.ofSeconds(10));
         Assert.assertTrue(productPage.getItemDetails().contains("Sauce Labs Backpack"));
@@ -22,14 +22,14 @@ public class ProductsPageTest extends BaseTest{
     }
 
     @Test(description = "use filter", priority = 3)
-    public void filterProducts(){
+    public void filterProducts() throws NoElementWasFound{
         productsPage.clickFilter();
         productsPage.waitTheElementFilter(Duration.ofSeconds(10));
         Assert.assertTrue(productsPage.getFilter().contains("Name (Z to A)"));
         Driver.log.info(" The filter was used successfully");
     }
     @Test(description = "add two items to the cart", priority = 4)
-    public void addSeveralProducts(){
+    public void addSeveralProducts() throws NoElementWasFound{
         productsPage.addToCard3();
         productsPage.addToCard2();
         productsPage.waitTheElementRemoveBtn(Duration.ofSeconds(10));

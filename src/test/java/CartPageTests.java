@@ -5,7 +5,7 @@ import java.time.Duration;
 
 public class CartPageTests extends BaseTest{
     @Test(description = "add a product to the cart and finish the buying", priority = 1)
-    public void orderProduct(){
+    public void orderProduct() throws NoElementWasFound{
         productsPage.addToCard();
         productsPage.clickCartIcon();
         cartPage.waitForTheElementCkt(Duration.ofSeconds(10));
@@ -21,7 +21,7 @@ public class CartPageTests extends BaseTest{
         Driver.log.info("The buying was finished successfully");
     }
    @Test(description = "remove a product from the cart", priority = 2)
-    public void removeProduct(){
+    public void removeProduct() throws NoElementWasFound{
        productsPage.addToCard();
        productsPage.clickCartIcon();
        Driver.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)) ;
@@ -31,7 +31,7 @@ public class CartPageTests extends BaseTest{
        cartPage.clickContinueShopping();
     }
      @Test(description = "checkout without products", priority = 3)
-    public void checkoutEmptyCart() {
+    public void checkoutEmptyCart() throws NoElementWasFound{
          productsPage.addToCard();
          productsPage.clickCartIcon();
          Driver.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)) ;
@@ -44,7 +44,7 @@ public class CartPageTests extends BaseTest{
      }
 
     @Test(description = "checkout without filling checkout form", priority = 4)
-    public void checkoutEmptyCheckoutForm(){
+    public void checkoutEmptyCheckoutForm() throws NoElementWasFound{
         productsPage.addToCard();
         Driver.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         productsPage.clickCartIcon();

@@ -5,7 +5,7 @@ import java.time.Duration;
 
 public class LoginTests extends ForLoginTest{
     @Test(description = "open Log in page and find some elements")
-    public void logInPage(){
+    public void logInPage() throws NoElementWasFound{
         loginPage.login("standard_user", "secret_sauce");
         loginPage.waitforLogIn(Duration.ofSeconds(10));
         loginPage.clickLoginButton();
@@ -15,7 +15,7 @@ public class LoginTests extends ForLoginTest{
 
     }
     @Test(description = "enter wrong credentials")
-    public void logInPageWrong(){
+    public void logInPageWrong() throws NoElementWasFound{
         loginPage.login("standard_user", "secrets_sauce");
         loginPage.waitforLogIn(Duration.ofSeconds(10));
         loginPage.clickLoginButton();

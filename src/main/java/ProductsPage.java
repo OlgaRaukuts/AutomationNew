@@ -37,49 +37,85 @@ public class ProductsPage {
     private WebElement filterMenu;
     @FindBy(xpath ="//a[@class='shopping_cart_link']" )
     private WebElement cartIcon;
-    public void addToCard(){
+    public void addToCard() throws NoElementWasFound{
+        if(addToCardButton == null){
+            throw new NoElementWasFound("There is no Add To Cart button");
+        }
         addToCardButton.click();
     }
-    public void addToCard2(){
+    public void addToCard2() throws NoElementWasFound{
+        if(addToCardButton2 == null){
+            throw new NoElementWasFound("There is no Add To Cart button");
+        }
         addToCardButton2.click();
     }
     public String getCartBadge(){
         return cartBadge.getText();
     }
-    public String getRemoveButton(){
+    public String getRemoveButton() throws NoElementWasFound {
+        if(removeButton == null){
+            throw new NoElementWasFound("There is no Remove Button");
+        }
         return removeButton.getText();
     }
-    public String getRemoveButton2(){
+    public String getRemoveButton2() throws NoElementWasFound{
+        if(removeButton2 == null){
+            throw new NoElementWasFound("There is no Remove Button");
+        }
         return removeButton2.getText();
     }
-    public String getLogo(){
+    public String getLogo() throws NoElementWasFound{
+        if(pageLogo == null){
+            throw new NoElementWasFound("There is no Page Logo");
+        }
         return pageLogo.getText();
     }
-    public void clickInventoryItemLink(){
+    public void clickInventoryItemLink() throws NoElementWasFound{
+        if(inventoryItemLink == null){
+            throw new NoElementWasFound("There is no Inventory item link");
+        }
         inventoryItemLink.click();
     }
-    public void logOut(){
+    public void logOut() throws NoElementWasFound{
+        if(logoutLink == null){
+            throw new NoElementWasFound("There is no Logout link");
+        }
         logoutLink.click();
     }
-    public void clickSideBarMenu(){
+    public void clickSideBarMenu() throws NoElementWasFound{
+        if(sideBarMenu == null){
+            throw new NoElementWasFound("There is no Side BAr Menu");
+        }
         sideBarMenu.click();
     }
-    public void clickFilter(){
+    public void clickFilter() throws NoElementWasFound{
+        if(filterMenu == null){
+            throw new NoElementWasFound("There is no Filter Menu");
+        }
         Select filterSelect = new Select(filterMenu);
         filterSelect.selectByVisibleText("Name (Z to A)");
         filterMenu.click();
     }
-    public String getFilter(){
+    public String getFilter() throws NoElementWasFound{
+        if(filterMenu == null){
+            throw new NoElementWasFound("There is no Filter Menu");
+        }
         return filterMenu.getText();
     }
-    public void clickCartIcon(){
+    public void clickCartIcon() throws NoElementWasFound{
+        if(cartIcon == null){
+            throw new NoElementWasFound("There is no Cart Icon");
+        }
         cartIcon.click();
     }
-    public void addToCard3(){
+    public void addToCard3() throws NoElementWasFound{
+        if(removeButton2 == null){
+            throw new NoElementWasFound("There is no Add to cart button");
+        }
         addToCardItem3.click();
     }
 
-    public void logoutGeneral(){
+    public void logoutGeneral() throws NoElementWasFound{
         clickSideBarMenu();
         logOut();
     }
