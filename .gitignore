@@ -1,0 +1,14 @@
+.gradle/8.5/checksums
+*.lock
+.gradle/8.5/dependencies-accessors
+.gradle/8.5/executionHistory
+.gradle/8.5/fileChanges
+allure-results
+.gradle/8.5/fileHashes
+.gradle/8.5
+.gradle/buildOutputCleanup
+.gradle
+.idea
+build/tmp/compileJava/compileTransaction/stash-dir
+build/tmp/compileTestJava/compileTransaction/stash-dir
+gradle/wrapper
