@@ -6,4 +6,9 @@
             <class name="PostmanEchoGetTest"/>
         </classes>
     </test>
+    <test name="Post Tests">
+        <classes>
+            <class name="PostmanEchoPostTest"/>
+        </classes>
+    </test>
 </suite>

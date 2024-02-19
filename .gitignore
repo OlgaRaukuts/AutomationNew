@@ -12,3 +12,4 @@ allure-results
 build/tmp/compileJava/compileTransaction/stash-dir
 build/tmp/compileTestJava/compileTransaction/stash-dir
 gradle/wrapper
+out
