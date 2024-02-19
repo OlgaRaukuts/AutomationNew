@@ -11,8 +11,6 @@ repositories {
 
 dependencies {
     implementation 'org.testng:testng:7.7.0'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.11.0'
-    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.16.1'
     implementation 'io.qameta.allure:allure-testng:2.19.0'
     implementation 'org.apache.logging.log4j:log4j-core:2.22.1'
     implementation 'org.apache.logging.log4j:log4j-api:2.22.1'
@@ -28,23 +26,18 @@ test {
         events "PASSED", "FAILED", "SKIPPED"
     }
 }
-// Define the version of AspectJ
-def aspectJVersion = "1.9.20.1"
-
-// Define configuration for AspectJ agent
-configurations {
-    agent {
-        canBeResolved = true
-        canBeConsumed = true
+test { //this is the gradle task to be executed
+    useTestNG() { //Tells Gradle to use TestNG
+        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
+        suites 'src/test/tests.xml' //location of our suite.xml
     }
 }
+task smokeTests(type: Test) { // we define a task with name ‘smokeTests’
+    useTestNG() {
+        useDefaultListeners = true
+        suites 'src/test/tests.xml'
+        includeGroups 'smoke' // We define the group name by using ‘includeGroups’ parameter.
+    }
 
-dependencies {
-    // Add aspectjweaver dependency
-    agent "org.aspectj:aspectjweaver:$aspectJVersion"
-}
 
-// Configure javaagent for test execution
-test {
-    jvmArgs = [ "-javaagent:${configurations.agent.singleFile}" ]
 }

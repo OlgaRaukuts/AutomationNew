@@ -1,10 +1,8 @@
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 
-@Test
-public class PostmanEchoGetTest extends Configs {
+public class PostmanEchoGetTest {
 
 @Test
     public void useSpec(){
@@ -20,7 +18,7 @@ public class PostmanEchoGetTest extends Configs {
     @Test
     public void postmanFirstGetTest(){
         RestAssured.
-                when().get("https://postman-echo.com/get?foo1=bar1&foo2=bar2").
+                when().get("https://postman-echo.com/get").
                 then().assertThat().statusCode(200);
     }
 }
