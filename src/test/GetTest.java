@@ -1,34 +1,21 @@
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
+
 
 public class GetTest {
-    private static RequestSpecification requestSpecification;
-    @BeforeClass
-    public static void initSpec(){
-        requestSpecification = (RequestSpecification) new RequestSpecBuilder()
-                .setContentType(ContentType.JSON)
-                .setBaseUri("https://reqres.in")
-                //.setPort(8080)
-                .build();
-    }
 
     @Test
     public void firstGetTest(){
-                given().spec((RequestSpecification) requestSpecification)
+                given().spec(RequestSpecificationRest.initSpec())
                 .when().get(Endpoints.getUsers).
-                then().assertThat().statusCode(200);
+                then().spec(ResponseSpecificationRest.getResponseSuccess());
     }
     @Test
     public void getTestNegative(){
-        RestAssured.
-                when().get("https://reqres.in/api/").
-                then().assertThat().statusCode(404);
+        when().get("https://reqres.in/api/").
+                then().spec(ResponseSpecificationRest.getResponse404());
     }
 }
 
