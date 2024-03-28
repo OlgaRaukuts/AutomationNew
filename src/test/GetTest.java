@@ -1,4 +1,5 @@
 import io.restassured.http.ContentType;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -18,18 +19,22 @@ public class GetTest extends BaseTest {
                         .get(Endpoints.getUsers).
                 then()
                         .log().all()
-                        .spec(ResponseSpecificationRest.getResponseSuccess())
                         .extract().body().jsonPath().getList("name", UserDataPojo.class);
+        userData.stream().forEach(x -> Assert.assertTrue(x.getAvatar().contains(x.getId())));
 
-        //userData.forEach(x -> Assert.assertTrue(x.getAvatar().contains(x.getEmail())));
+     /*   for (UserDataPojo userDatum : userData) {
+            assertThat(userDatum).hasFieldOrPropertyWithValue("Numm", "numm");
+        }
+
+      */
+
     }
 
 
     @Test
     public void getTestNegative(){
         Specifications.installSpecifications(Specifications.requestSpecification(), Specifications.getResponse404());
-        when().get("https://reqres.in/api/").
-                then();
+        when().get("https://reqres.in/api/");
     }
 
 }
