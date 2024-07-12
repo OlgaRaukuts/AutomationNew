@@ -1,3 +1,4 @@
+import Challenge1to10.BarkingDog;
 import Challenge1to10.MegaBytesConverter;
 import Challenge1to10.SpeedConverter;
 
@@ -6,6 +7,6 @@ import Challenge1to10.SpeedConverter;
 public class Main {
     public static void main(String[] args) {
 
-        MegaBytesConverter.printMegaBytesAndKiloBytes(5000);
+        BarkingDog.shouldWakeUp(true, -1);
     }
 }
