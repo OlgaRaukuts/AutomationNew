@@ -1,4 +1,4 @@
-package Challenge1to10;
+package challenges;
 
 public class MethodsOverloading {
     public static void convertToCentimeters (int heightInches){

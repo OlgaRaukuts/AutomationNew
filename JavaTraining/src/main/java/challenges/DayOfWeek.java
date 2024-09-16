@@ -1,4 +1,4 @@
-package Challenge13to29;
+package challenges;
 
 public class DayOfWeek {
     public static void printDayOfWeek(int day){

@@ -1,4 +1,4 @@
-package Challenge13to29;
+package challenges;
 
 public class NumberInWord {
     public static void printNumberInWord(int number){

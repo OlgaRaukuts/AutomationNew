@@ -1,4 +1,4 @@
-package Challenge1to10;
+package challenges;
 
 public class DecimalComparator {
     public static boolean areEqualByThreeDecimalPlaces(double a, double b){

@@ -1,4 +1,4 @@
-package Challenge1to10;
+package challenges;
 
 public class TeenNumberChecker {
     public static boolean hasTeen(int a, int b, int c){

@@ -10,8 +10,16 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.testng:testng:7.7.0'
-    testImplementation 'org.assertj:assertj-core:3.25.3'
-
+    implementation 'junit:junit:4.13.1'
+    implementation 'org.testng:testng:7.10.2'
+    implementation 'org.seleniumhq.selenium:selenium:2.0rc2'
+    implementation 'io.cucumber:cucumber-java:7.18.0'
+    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.24.0'
 }
-
+sourceSets {
+    test {
+        java {
+            srcDirs = ['src/test']
+        }
+    }
+}

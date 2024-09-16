@@ -1,4 +1,4 @@
-package Challenge1to10;
+package challenges;
 
 public class EqualityPrinter {
     public static void printEqual(int a, int b, int c){

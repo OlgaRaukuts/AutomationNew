@@ -1,4 +1,4 @@
-package Challenge13to29;
+package challenges;
 
 public class SumOdd {
     public static boolean isOdd(int number){

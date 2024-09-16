@@ -1,4 +1,4 @@
-package Challenge1to10;
+package challenges;
 
 public class PlayingCat {
 public static boolean isCatPlaying(boolean summer,int temperature ){
