@@ -1,9 +1,11 @@
+import challenges.EvenDigitSum;
 import challenges.FirstLastDigitSum;
 import challenges.NumberPalindrome;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(FirstLastDigitSum.sumFirstAndLastDigit(7768));
+      //  System.out.println(FirstLastDigitSum.sumFirstAndLastDigit(7768));
+        System.out.println(EvenDigitSum.getEvenDigitSum(123456789));
 
     }
     public static boolean isEvenNumber(int number) {
