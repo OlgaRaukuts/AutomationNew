@@ -1,13 +1,16 @@
-import challenges.BankAccount;
+import challenges.SimpleCalculator;
 
 public class Main {
     public static void main(String[] args) {
 
-
-        BankAccount olyasAccount = new BankAccount();
-        olyasAccount.depositFunds(250.25);
-        olyasAccount.depositFunds(75.85);
-        olyasAccount.withdrawFunds(50);
-        olyasAccount.withdrawFunds(280);
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.setFirstNumber(5.0);
+        calculator.setSecondNumber(4);
+        System.out.println("add= " + calculator.getAdditionResult());
+        System.out.println("subtract= " + calculator.getSubtractionResult());
+        calculator.setFirstNumber(5.25);
+        calculator.setSecondNumber(3);
+        System.out.println("multiply= " + calculator.getMultiplicationResult());
+        System.out.println("divide= " + calculator.getDivisionResult());
     }
 }
