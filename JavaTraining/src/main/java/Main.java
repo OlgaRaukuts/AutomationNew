@@ -1,9 +1,13 @@
-import challenges.PaintJob;
+import challenges.BankAccount;
 
 public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println( PaintJob.getBucketCount(3.26, 0.75));
+        BankAccount olyasAccount = new BankAccount();
+        olyasAccount.depositFunds(250.25);
+        olyasAccount.depositFunds(75.85);
+        olyasAccount.withdrawFunds(50);
+        olyasAccount.withdrawFunds(280);
     }
 }
