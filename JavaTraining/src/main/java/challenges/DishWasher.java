@@ -1,13 +1,16 @@
 package challenges;
 
-public class DishWasher extends SmartKitchen{
+public class DishWasher {
     private boolean hasWorkToDo;
 
-    public boolean isHasToWork() {
-        return hasWorkToDo;
+    public void setHasWorkToDo(boolean hasWorkToDo) {
+        this.hasWorkToDo = hasWorkToDo;
     }
 
     public void doDishes(){
-
+        if(hasWorkToDo){
+            System.out.println("Washing dishes");
+            hasWorkToDo = false;
+        }
     }
 }

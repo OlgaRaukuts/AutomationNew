@@ -5,19 +5,23 @@ public class SmartKitchen {
     private DishWasher dishWasher;
     private Refrigirator iceBox;
 
-   public void addWater(){
+    public SmartKitchen(){
+        brewMaster = new CoffeeMaker();
+        dishWasher = new DishWasher();
+        iceBox = new Refrigirator();
+    }
 
-   }
-   public void pourMilk(){
+    public CoffeeMaker getBrewMaster() {
+        return brewMaster;
+    }
 
-   }
-   public void loadDishwasher(){
+    public DishWasher getDishWasher() {
+        return dishWasher;
+    }
 
-   }
-   public void setKitchenState(){
+    public Refrigirator getIceBox() {
+        return iceBox;
+    }
 
-   }
-   public void doKitchenWork(){
 
-   }
 }
