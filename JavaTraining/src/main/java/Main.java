@@ -1,29 +1,30 @@
-import challenges.Car1;
-import challenges.Ford;
-import challenges.Holden;
-import challenges.Mitsubishi;
+import challenges.BillsBurger.MealOrder;
 
 public class Main {
     public static void main(String[] args) {
-        Car1 car = new Car1(8, "Base car");
-        System.out.println(car.startEngine());
-        System.out.println(car.accelerate());
-        System.out.println(car.brake());
 
-        Mitsubishi mitsubishi = new Mitsubishi(6, "Outlander VRX 4WD");
-        System.out.println(mitsubishi.startEngine());
-        System.out.println(mitsubishi.accelerate());
-        System.out.println(mitsubishi.brake());
 
-        Ford ford = new Ford(6, "Ford Falcon");
-        System.out.println(ford.startEngine());
-        System.out.println(ford.accelerate());
-        System.out.println(ford.brake());
+//        Item coke = new Item("drink", "coke", 1.50);
+//        coke.printItem();
+//        coke.setSize("LARGE");
+//        coke.printItem();
+//
+//        Item avocado = new Item("Topping", "avocado", 1.50);
+//        avocado.printItem();
 
-        Holden holden = new Holden(6, "Holden Commodore");
-        System.out.println(holden.startEngine());
-        System.out.println(holden.accelerate());
-        System.out.println(holden.brake());
+//        Burger burger = new Burger("regular", 4.00);
+//        burger.addToppings("BACON", "CHEESE", "MAYO");
+//        burger.printItem();
+
+//        MealOrder regularMeal = new MealOrder();
+//        regularMeal.addBurgerToppings("BACON", "CHEESE", "MAYO");
+//        regularMeal.setDrinkSize("LARGE");
+//        regularMeal.printItemizedList();
+
+        MealOrder secondMeal = new MealOrder("turkey", "7-up",
+                "chili");
+        secondMeal.addBurgerToppings("LETTUCE", "CHEESE", "MAYO");
+        secondMeal.setDrinkSize("SMALL");
 
     }
 
