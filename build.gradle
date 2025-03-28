@@ -1,7 +1,7 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.0'
 }
-
 group 'org.example'
 version '1.0-SNAPSHOT'
 
@@ -11,24 +11,31 @@ repositories {
 
 dependencies {
     implementation 'org.testng:testng:7.7.0'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.8.1'
-    testImplementation 'com.codeborne:selenide:6.12.3'
+    implementation 'io.rest-assured:rest-assured:5.4.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.17.0-rc1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0-rc1'
+    testImplementation 'org.assertj:assertj-core:3.25.3'
 
 }
 
 test {
-    useJUnitPlatform()
+    useTestNG() {
+        useDefaultListeners = true
+    }
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
 }
 test { //this is the gradle task to be executed
     useTestNG() { //Tells Gradle to use TestNG
         useDefaultListeners = true // Tells TestNG to execute its default reporting structure
-        suites 'src/??.xml' //location of our suite.xml
+        suites 'src/test/tests.xml' //location of our suite.xml
     }
 }
 task smokeTests(type: Test) { // we define a task with name ‘smokeTests’
     useTestNG() {
         useDefaultListeners = true
-        suites 'src/???.xml'
+        suites 'src/test/tests.xml'
         includeGroups 'smoke' // We define the group name by using ‘includeGroups’ parameter.
     }
 

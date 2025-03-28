@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Swag Lab Tests">
+    <test name="Get Tests">
+        <classes>
+            <class name="PostmanEchoGetTest"/>
+        </classes>
+    </test>
+    <test name="Post Tests">
+        <classes>
+            <class name="PostmanEchoPostTest"/>
+        </classes>
+    </test>
+</suite>
