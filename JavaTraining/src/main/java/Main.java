@@ -1,11 +1,10 @@
-import challenges.ArraysChallenge;
-
 public class Main {
     public static void main(String[] args) {
+        char Q, A;
 
-        ArraysChallenge.randomise();
-        ArraysChallenge.sortArray();
+        Q = 81;
+        A = 65;
+        System.out.println(Q + A);
+
     }
-
-
 }
